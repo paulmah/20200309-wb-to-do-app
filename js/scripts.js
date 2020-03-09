@@ -13,7 +13,6 @@ var form = document.querySelector( 'form' );
 form.addEventListener( 'submit', function ( event ) {
     // Prevent a page-refresh from a REAL form submission.
     event.preventDefault();
-
     // Let's add the list item into our UL.
     activeList.innerHTML += `
         <li>
@@ -23,8 +22,8 @@ form.addEventListener( 'submit', function ( event ) {
     `;
 
     // Grab out brand new checkbox! (The last LI will always be the newest one!)
-    // Loop through all the checkboxes - make sure they ALL have the event each time we submit!
     var newCheckboxes = document.querySelectorAll( 'ul [type="checkbox"]' );
+    // Loop through all the checkboxes - make sure they ALL have the event each time we submit!
     for ( var i = 0; i < newCheckboxes.length; i++ ) {
         var newCheckbox = newCheckboxes[i];
         // Listen for a click on this checkbox!
@@ -43,21 +42,3 @@ form.addEventListener( 'submit', function ( event ) {
 } );
 
 
-
-
-    form.addEventListener( 'submit', function ( event ) {
-        // Prevent a page-refresh from a REAL form submission.
-        event.preventDefault();
-    
-        // Let's add the list item into our UL.
-        completedList.innerHTML += `
-            <li>
-                <input type="checkbox">
-                ` + newTask.value + `
-            </li>
-        `;
-    
-
-
-
-})
